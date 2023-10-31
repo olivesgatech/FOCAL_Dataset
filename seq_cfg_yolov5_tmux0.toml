@@ -1,0 +1,83 @@
+[detection]
+model = 'yolov5'
+backbone = 'darknet-34'
+epochs = 30
+batch_size = 16
+test_batch_size = 16
+img_size = 640
+iou_threshold = 0.6
+nms_iou_threshold = 0.65
+map_iou_threshold = 0.5
+conf_threshold = 0.001
+yolocfg = './Models/detection/yolov5/models/yolov5n.yaml'
+hyp = './Models/detection/yolov5/data/hyps/hyp.scratch-low.yaml'
+data = './Models/detection/yolov5/data/focal.yaml'
+pretrained = 'yolov5n.pt'
+
+[detection.optimization]
+lr = 0.01
+optimizer = 'adam'
+scheduler = 'multiLR' # 'multiLR'
+multiLR_steps = 2
+gamma = 0.1
+
+[recognition]
+model = 'resnet-18'
+epochs = 200
+batch_size = 128
+loss = 'ce'
+
+[recognition.optimization]
+lr = 0.001
+optimizer = 'adam'
+scheduler = 'multiLR'
+multiLR_steps = 2
+gamma = 0.1
+
+[run_configs]
+output_folder_name = './Models/yolov5n/al_minboxes_seq_pretrained_model' # folder for trained model outputs - i.e. the .pth files
+ld_folder_name = './results/sequence/yolov5n/al_minboxes_seq_pretrained/' # output for statistics we may be interested in
+resume = 'none' # file path to .pth file that you want to load from
+# cache_dir = '/media/yash-yee/Storage/Dropbox (GhassanGT)/YashYee/InSync/Big and DATA/Ford-GaTech/Ford-GATECH/Models/detection/yolov5/data/focal/'
+cuda = true
+gpu_id = 0
+save_test_imgs = false
+train = false # whether or not to train
+test = true # when running with uspec analysis this flag will track predictions on the test set
+val = false # only segmentation
+
+[active_learning]
+n_start = 2
+n_end = 14
+n_query = 1
+strategy = 'entropy'
+init_seed = 0
+convergence_map = 0.15
+max_epochs = 10
+sampling_type = 'sequence'
+
+# seed range for parallel running
+start_seed = 1
+end_seed = 3
+
+[active_learning.stats]
+stat_sampling_type = 'SV'
+pcal_sampling_type = 'pc'
+secondary_samping_type = 'margin'
+relaxation = 1024
+
+[data]
+dataset = 'FORD' # choice between FORD, FORD aaaaand FORD of course - jk we can add COCO later if someone is motivated
+#/media/yash-yee/Storage/Dropbox (GhassanGT)/YashYee/InSync/Big and DATA/Ford-GaTech/Ford-GATECH/applications/activelearning
+data_loc = '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format' # '../../../Yolo/yolov5/data/focal_timerestricted/'  # path to data '../../../../../../../../Yolo/yolov5/data/focal_ultralytics/'
+data_cache = '~/cache416v3/' # path to pre-processed data
+num_classes = 4
+in_channels = 3
+total_sequences = 86
+
+
+[data.augmentations]
+random_crop = false
+random_hflip = false
+cutout = false # only classification
+resize_shape = 32

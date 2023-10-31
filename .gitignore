@@ -1,0 +1,15 @@
+Models/results/
+Models/detection/yolov5/data/focal/
+Models/yolo/
+Models/yolov5n/
+Models/yolov5n6/
+results/
+Models/detection/yolov3/yolov3-kitti.pth.tar
+__pycache__/
+data/loader/detection/focaldata_old/
+Models/detection/yolov5/data/focal_timerestricted/
+SITI/
+visualization/cost/utils/
+data/
+Models/
+visualization/

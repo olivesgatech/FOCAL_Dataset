@@ -1,0 +1,77 @@
+[detection]
+model = 'yolov3'
+backbone = 'darknet-34'
+yolocfg = 'path/to/yolocfg'
+epochs = 15
+batch_size = 10
+img_size = 416
+iou_threshold = 0.5
+nms_iou_threshold = 0.45 # max iou two predicted bboxes can have without nms removing one
+map_iou_threshold = 0.5 # iou th when we consider a bbox predicted correctly
+conf_threshold = 0.6 # conf th when the model considers the bbox as predicted
+max_detections = 50
+
+[detection.optimization]
+lr = 0.0001
+optimizer = 'adam'
+scheduler = 'multiLR' # 'multiLR'
+multiLR_steps = 2
+gamma = 0.1
+
+[recognition]
+model = 'resnet-18'
+epochs = 200
+batch_size = 128
+loss = 'ce'
+
+[recognition.optimization]
+lr = 0.001
+optimizer = 'adam'
+scheduler = 'multiLR'
+multiLR_steps = 2
+gamma = 0.1
+
+[run_configs]
+output_folder_name = 'run' # folder for trained model outputs - i.e. the .pth files
+ld_folder_name = 'testld_output/' # output for statistics we may be interested in
+# resume = '/home/ryan/repos/Ford-GATECH/run/FORD/model_best.pth.tar' # file path to .pth file that you want to load from
+resume = 'none' # file path to .pth file that you want to load from
+cache_dir = '.data_cache564'
+cuda = true
+gpu_id = 1
+save_test_imgs = false
+train = true # whether or not to train
+test = true # when running with uspec analysis this flag will track predictions on the test set
+val = true # only segmentation
+
+[active_learning]
+n_start = 128
+n_end = 52000
+n_query = 1024
+strategy = 'random'
+init_seed = 0
+convergence_map = 0.15
+max_epochs = 20
+sampling_type = 'frame' # specifies whether to perform AL in frames or sequences
+
+# seed range for parallel running
+start_seed = 0
+end_seed = 1
+
+[active_learning.stats]
+stat_sampling_type = 'SV'
+save_switches = false # Flag for saving gauss switches
+switch_refresh_rate = 5 # amount of epochs in between switch calculations
+
+[data]
+dataset = 'FORD' # choice between FORD, FORD aaaaand FORD of course - jk we can add COCO later if someone is motivated
+data_loc = '../' #'/data/ford/active_learning/' # path to data
+data_cache = './data_cache/' # path to pre-processed data
+num_classes = 9
+in_channels = 3
+
+[data.augmentations]
+random_crop = false
+random_hflip = false
+cutout = false # only classification
+resize_shape = 32
