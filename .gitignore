@@ -7,7 +7,5 @@ data/loader/detection/focaldata_old/
 Models/detection/yolov5/data/focal_timerestricted/
 SITI/
 visualization/cost/utils/
-data/
-Models/
 visualization/
 .idea/

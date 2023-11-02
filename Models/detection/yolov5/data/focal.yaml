@@ -1,0 +1,9 @@
+train: '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format/images/train'
+test:  '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format/images/test' 
+val: '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format/images/val' 
+
+
+nc: 4
+
+names: ['Pedestrian', 'Bicycle', 'Car', 'Cart']
+
