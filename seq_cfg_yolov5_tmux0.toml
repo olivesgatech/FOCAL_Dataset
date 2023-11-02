@@ -53,7 +53,7 @@ n_query = 1
 strategy = 'entropy'
 init_seed = 0
 convergence_map = 0.15
-max_epochs = 10
+max_epochs = 1
 sampling_type = 'sequence'
 
 # seed range for parallel running

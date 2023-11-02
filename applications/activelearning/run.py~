@@ -51,7 +51,7 @@ def main(cfg: BaseConfig, opt=None, opt_val=None):
     event_list = [event.split('-')[-1] for event in event_list]
     np.save(cfg.run_configs.ld_folder_name + 'event_list.npy', np.array(event_list))
     if cfg.active_learning.sampling_type == 'frame':
-        n_pool = len(os.listdir('/home/yash-yee/projects/Ford-GATECH/Models/detection/yolov5/data/focal_timerestricted/images/train'))  # train_configs.data_config.train_len
+        n_pool = len(os.listdir(cfg.data.data_loc))
 
     else:
         n_pool = cfg.data.total_sequences
@@ -155,11 +155,9 @@ def main(cfg: BaseConfig, opt=None, opt_val=None):
             if round == 0:
                 if cfg.active_learning.sampling_type == 'sequence':
                     new_events = np.array(list(event_dict.keys()))[start_idxs]
-                    print(new_events)
                     np.save(target_folder + 'new_events_round0.npy', new_events)
                 elif cfg.active_learning.sampling_type == 'frame':
                     new_events = idx_to_event[start_idxs]  # convert seqs to indices
-                    print(new_events)
                     np.save(target_folder + 'new_events_round0.npy', new_events)
 
             print('Round: %d' % round)
@@ -183,7 +181,7 @@ def main(cfg: BaseConfig, opt=None, opt_val=None):
             # perform sampling action
             sampler.action(trainer, epoch)
 
-            new_idxs = sampler.query(model,nquery, trainer)  # outputs sequences
+            new_idxs = sampler.query(nquery, trainer)  # outputs sequences
             if cfg.active_learning.sampling_type == 'sequence':
                 new_events = np.array(list(event_dict.keys()))[new_idxs]
                 print(new_events)

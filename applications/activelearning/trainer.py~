@@ -126,7 +126,7 @@ class ALDetectionTrainer(DetectionTrainer):
             #print(idxs)
             #print(global_idxs)
             bs = image.shape[0]
-            global_idxs = global_idxs[0]
+            #global_idxs = global_idxs[0]
             #print(global_idxs)
             # assign each image and target to GPU
             if self._cfg.run_configs.cuda:

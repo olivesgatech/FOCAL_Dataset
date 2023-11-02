@@ -19,11 +19,11 @@ class SequenceLConfSampling(Sampler):
                 self._idx_event_map[idx] += event_list[i]
         self._idx_event_map = np.array(self._idx_event_map)
 
-    def query(self, n: int, trainer: ALDetectionTrainer):
+    def query(self,model, n: int, trainer: ALDetectionTrainer):
         """
         Performs entropy query of points
         """
-        stats = trainer.unlabeled_statistics()
+        stats = trainer.unlabeled_statistics(model)
         relevant_events = {}
         for idx in stats['idxs']:
             relevant_events[self._idx_event_map[idx]] = True

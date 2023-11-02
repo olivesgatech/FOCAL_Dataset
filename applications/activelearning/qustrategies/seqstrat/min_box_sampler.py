@@ -11,7 +11,7 @@ class MinBoxSampling(Sampler):
         super(MinBoxSampling, self).__init__(n_pool, start_idxs, cfg, event_dict, meta_dict=meta_dict,
                                                 event_list=event_list)
 
-    def query(self, n: int, trainer):
+    def query(self,model, n: int, trainer):
         """
         Performs a query of sequences with the least number of estimated bounding boxes
         """

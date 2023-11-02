@@ -10,7 +10,7 @@ class SequenceRandomSampling(Sampler):
     def __init__(self, n_pool, start_idxs, cfg: BaseConfig, event_dict: dict):
         super(SequenceRandomSampling, self).__init__(n_pool, start_idxs, cfg, event_dict)
 
-    def query(self,model, n: int, trainer):
+    def query(self, n: int, trainer):
         """
         Performs random query of points
         # """

@@ -12,7 +12,7 @@ class MostFrameSampling(Sampler):
         super(MostFrameSampling, self).__init__(n_pool, start_idxs, cfg, event_dict)
         # self.event_dict = event_dict
 
-    def query(self, n: int, trainer):
+    def query(self,model, n: int, trainer):
         """
         Performs a query of sequences with the most number of frames
         """
