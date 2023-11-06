@@ -45,7 +45,10 @@ export PYTHONPATH=$PYTHONPATH:$PWD
 ```
 3. Configure the .toml file according to the desired settings of the project. An example is provided in the provided repository. Important parameters of interest are shown below:
 ```
-hello
+yolocfg = './Models/detection/yolov5/models/yolov5n.yaml' # Initial Parameters of Model for Training
+hyp = './Models/detection/yolov5/data/hyps/hyp.scratch-low.yaml'
+data = './Models/detection/yolov5/data/focal.yaml'
+pretrained = 'yolov5n.pt'
 ```
 
 
