@@ -45,16 +45,38 @@ export PYTHONPATH=$PYTHONPATH:$PWD
 ```
 3. Configure the .toml file according to the desired settings of the project. An example is provided in the provided repository. Important parameters of interest are shown below:
 ```
-yolocfg = './Models/detection/yolov5/models/yolov5n.yaml' # Initial Parameters of Model for Training
+# Important Parameters for Object Detection Network
+
+yolocfg = './Models/detection/yolov5/models/yolov5n.yaml' 
 hyp = './Models/detection/yolov5/data/hyps/hyp.scratch-low.yaml'
 data = './Models/detection/yolov5/data/focal.yaml'
 pretrained = 'yolov5n.pt'
+
+# Important Parameters for Sequential Active Learning Experiments
+# n_start is intial number of sequences to begin training
+n_start = 2
+
+# n_end is the number of sequences in the final round of training
+n_end = 14
+
+# n_query is the number of sequences added after each round
+n_query = 1
+
+# strategy is the query strategy used for the experiment
+# Implemented strategies include: Entropy, Least Confidence, [GauSS](https://arxiv.org/abs/2302.12018), Margin, Random, and a variety of Conformal Methods
+strategy = 'entropy'
+init_seed = 0
+
+# Convergence Map and Max Epochs Determine how long each round will train for
+convergence_map = 0.15
+max_epochs = 9
+
+# Sampling Type sets the active learning to framewise or sequential modes
+sampling_type = 'sequence'
 ```
 
 
 
 ### Acknowledgements
 
-This work was done in collaboration with the [Retina Consultants of Texas](https://www.retinaconsultantstexas.com/).
-
-This codebase utilized was partly constructed with code from the [Supervised Contrastive Learning](https://github.com/HobbitLong/SupContrast) Github.
+This work was done in collaboration with the [Ford Motor Company](https://www.ford.com/).
