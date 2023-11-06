@@ -11,13 +11,15 @@ and [GitHub](https://github.com/olivesgatech) for other interesting work!!!
 ## Citation
 
 K. Kokilepersaud*, Y. Logan*, R. Benkert, C. Zhou, M. Prabhushankar, G. AlRegib, E. Corona, K. Singh, A. Parchami, "FOCAL: A Cost-Aware, Video Dataset for Active Learning," in IEEE Conference on Big Data 2023, Sorento, Italy, Dec. 15-18, 2023.
-'''@article{kokilepersaud2023focal,
+```
+@article{kokilepersaud2023focal,
   title={FOCAL: A Cost-Aware, Video Dataset for Active Learning},
   author={Kokilepersaud, Kiran and Logan, Yash-Yee and Benkert, Ryan and Zhou, Chen and Prabhushankar, Mohit and AlRegib, Ghassan and Corona, Enrique and Singh, Kunjan and Parchami, Armin},
   journal={IEEE International Conference on Big Data},
   year={2023},
   publisher={IEEE}
-}'''
+}
+```
 ## Abstract
 In this paper, we introduce the FOCAL (Ford-OLIVES Collaboration on Active Learning) dataset which enables the study of the impact of annotation-cost within a video active learning setting. Annotation-cost refers to the time it takes an annotator to label and quality-assure a given video sequence. A practical motivation for active learning research is to minimize annotation-cost by selectively labeling informative samples that will maximize performance within a given budget constraint. However, previous work in video active learning lacks real-time annotation labels for accurately assessing cost minimization and instead operates under the assumption that annotation-cost scales linearly with the amount of data to annotate. This assumption does not take into account a variety of real-world confounding factors that contribute to  a nonlinear cost such as the effect of an assistive labeling tool and the variety of interactions within a scene such as occluded objects, weather, and motion of objects. FOCAL addresses this discrepancy by providing real annotation-cost labels for 126 video sequences across 69 unique city
 scenes with a variety of weather,
