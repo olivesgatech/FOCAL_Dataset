@@ -74,7 +74,10 @@ max_epochs = 9
 # Sampling Type sets the active learning to framewise or sequential modes
 sampling_type = 'sequence'
 ```
-
+4. Set the desired .toml as the config file for the experiment and perform the active learning experiment with the following command:
+```
+python applications/activelearning/run.py --config example.toml
+```
 
 
 ### Acknowledgements
