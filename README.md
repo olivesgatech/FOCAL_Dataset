@@ -40,10 +40,12 @@ with the associated paper located .
   git clone https://github.com/olivesgatech/FOCAL_Dataset.git
    ```
 2. Set the python path in the starting directory of the repo with:
-   ```export PYTHONPATH=$PYTHONPATH:$PWD```
+   ```
+export PYTHONPATH=$PYTHONPATH:$PWD
+```
 3. Configure the .toml file according to the desired settings of the project. An example is provided in the provided repository. Important parameters of interest are shown below:
    ```
-
+hello
    ```
 
 
