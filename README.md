@@ -28,7 +28,9 @@ lighting, and seasonal conditions. These videos have a wide range of interaction
 
 ## Visual Abstract
 
-![Discrepancy Between Traditional and Real-World Video Active Learning](./diagrams/github_visual/graph_abstract.jpg)
+![Discrepancy Between Traditional and Real-World Video Active Learning](./diagrams/github_visual/real_world_labeling_active_learning.jpg)
+
+![Difference in Cost of Chosen Sequences by Active Learning Strategy](./diagrams/github_visual/true-cost-vs-exp-cost.png)
 
 ## Data
 
