@@ -27,9 +27,11 @@ lighting, and seasonal conditions. These videos have a wide range of interaction
 
 
 ## Visual Abstract
-
+This figure shows the differences between traditional active learning algorithms and the considerations that exist in real-world annotation workflows.
 ![Discrepancy Between Traditional and Real-World Video Active Learning](diagrams/github_visual/real_world_labeling_active_learning.jpg)
 
+
+This diagram shows the differences in cost of the queried sequences by a variety of Active Learning Algorithms.
 ![Difference in Cost of Chosen Sequences by Active Learning Strategy](diagrams/github_visual/true-cost-vs-exp-cost.png)
 
 ## Data
