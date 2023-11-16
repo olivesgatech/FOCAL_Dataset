@@ -28,6 +28,8 @@ lighting, and seasonal conditions. These videos have a wide range of interaction
 
 ## Visual Abstract
 
+![Discrepancy Between Traditional and Real-World Video Active Learning](./diagrams/github_visual/graph_abstract.jpg)
+
 ## Data
 
 The data for this work can be found at this  location, 
