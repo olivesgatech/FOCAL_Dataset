@@ -35,10 +35,9 @@ multiLR_steps = 2
 gamma = 0.1
 
 [run_configs]
-output_folder_name = './Models/yolov5n/al_minboxes_seq_pretrained_model' # folder for trained model outputs - i.e. the .pth files
-ld_folder_name = './results/sequence/yolov5n/al_minboxes_seq_pretrained/' # output for statistics we may be interested in
+output_folder_name = './Models/yolov5n/al_entropy_seq_pretrained_model' # folder for trained model outputs - i.e. the .pth files
+ld_folder_name = './results/sequence/yolov5n/al_entropy_seq_pretrained/' # output for statistics we may be interested in
 resume = 'none' # file path to .pth file that you want to load from
-# cache_dir = '/media/yash-yee/Storage/Dropbox (GhassanGT)/YashYee/InSync/Big and DATA/Ford-GaTech/Ford-GATECH/Models/detection/yolov5/data/focal/'
 cuda = true
 gpu_id = 0
 save_test_imgs = false
@@ -67,10 +66,9 @@ secondary_samping_type = 'margin'
 relaxation = 1024
 
 [data]
-dataset = 'FORD' # choice between FORD, FORD aaaaand FORD of course - jk we can add COCO later if someone is motivated
-#/media/yash-yee/Storage/Dropbox (GhassanGT)/YashYee/InSync/Big and DATA/Ford-GaTech/Ford-GATECH/applications/activelearning
-data_loc = '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format' # '../../../Yolo/yolov5/data/focal_timerestricted/'  # path to data '../../../../../../../../Yolo/yolov5/data/focal_ultralytics/'
-data_cache = '~/cache416v3/' # path to pre-processed data
+dataset = 'FORD'
+data_loc = '/data/ford/All_Time_Restricted_Sequences_Blurred/yolov5_format' #
+#data_cache = '~/cache416v3/' # path to pre-processed data
 num_classes = 4
 in_channels = 3
 total_sequences = 86
