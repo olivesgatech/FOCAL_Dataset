@@ -38,8 +38,7 @@ This diagram shows the differences in cost of the queried sequences by a variety
 
 ## Data
 
-The data for this work can be found at this  location, 
-with the associated paper located .
+The data for this work can be found at this [zenodo location](https://zenodo.org/records/10145325).
 
 ## Code Usage
 
