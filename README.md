@@ -90,4 +90,4 @@ python applications/activelearning/run.py --config example.toml
 
 ### Acknowledgements
 
-This work was done in collaboration with the [Ford Motor Company](https://www.ford.com/).
+This work was done in collaboration with the [Ford Motor Company](https://www.ford.com/). Code for object detection experiments can be found at the [official Yolo v5 repository](https://github.com/ultralytics/yolov5).
