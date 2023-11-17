@@ -7,6 +7,8 @@ It has recently been accepted for publication in the IEEE International Conferen
 Feel free to check our lab's [Website](https://ghassanalregib.info/publications) 
 and [GitHub](https://github.com/olivesgatech) for other interesting work!!!
 
+The paper can be read at this [arxiv link](https://arxiv.org/submit/5241601).
+
 ***
 ## Citation
 
